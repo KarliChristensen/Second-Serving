@@ -12,8 +12,6 @@ const MONGO_URI =
   process.env.MONGODB_URI ||
   `mongodb+srv://admin:${password}@cluster0.ztdoc7q.mongodb.net/Deployment?retryWrites=true&w=majority`;
 
-
-  
 mongoose
   .connect(MONGO_URI)
   .then((x) => {
