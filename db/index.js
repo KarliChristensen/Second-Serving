@@ -2,12 +2,14 @@
 // https://www.npmjs.com/package/mongoose
 const mongoose = require("mongoose");
 
+const password = process.env.password
+
 // ℹ️ Sets the MongoDB URI for our app to have access to it.
 // If no env has been set, we dynamically set it to whatever the folder name was upon the creation of the app
 //DO NOT TOUCH!!!!
 
 const MONGO_URI =
-  process.env.MONGODB_URI || "mongodb+srv://user:passwordhere@cluster0.ztdoc7q.mongodb.net/Deployment?retryWrites=true&w=majority";
+  process.env.MONGODB_URI || `mongodb+srv://user:${password}@cluster0.ztdoc7q.mongodb.net/Deployment`;
 
 mongoose
   .connect(MONGO_URI)
