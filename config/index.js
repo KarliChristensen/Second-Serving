@@ -24,9 +24,10 @@ const session = require("express-session");
 // ℹ️ MongoStore in order to save the user session in the database
 // https://www.npmjs.com/package/connect-mongo
 const MongoStore = require("connect-mongo");
-
 // Connects the mongo uri to maintain the same naming structure
-const MONGO_URI = `mongodb+srv://admin:${process.env.MONGO_PASSWORD}@myserver.jny48ec.mongodb.net/`;
+
+const password = process.env.password;
+const MONGO_URI = `mongodb+srv://admin:${password}@cluster0.ztdoc7q.mongodb.net/Deployment?retryWrites=true&w=majority`;
 
 // Middleware configuration
 module.exports = (app) => {
